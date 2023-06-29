@@ -7,11 +7,10 @@
       "@/models": ["./src/models"],
       "@/services": ["./src/services"],
       "@/views": ["./src/views"],
-      "@/global/theme": ["./global/theme"],
-      "@/global/img": ["./global/img/img.ts"],
-      "@/global/atomic/element": ["./global/atomic/element"],
-      "@/global/atomic/component": ["./global/atomic/component"],
-      "@/global/atomic/design": ["./global/atomic/design"]
+      "@/global/img/*": ["./global/*"],
+      "@/atomic/element": ["./atomic/element"],
+      "@/atomic/component": ["./atomic/component"],
+      "@/atomic/design": ["./atomic/design"]
     },
     "strict": true
   },
