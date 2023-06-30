@@ -12,8 +12,8 @@ const IMGENS = Object.freeze({
     line: require("../assets/images/line.png"),
 });
 const ICONS = Object.freeze({
-    apple: require("../assets/images/apple.png"),
-    faceook: require("../assets/images/facebook.png"),
-    google: require("../assets/images/google.png"),
+    apple: require("../assets/icons/apple.png"),
+    faceook: require("../assets/icons/facebook.png"),
+    google: require("../assets/icons/google.png"),
 });
 export {ICONS,IMGENS}
