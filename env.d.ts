@@ -1,3 +1,3 @@
-declare module '@env' {   
-	// export const URL_LOCAL:string;
+declare module "@env" {
+  // export const URL_LOCAL:string;
 }

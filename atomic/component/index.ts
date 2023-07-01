@@ -1,1 +1,1 @@
-export {CoffeeCard} from "./CoffeCard";
+export { CoffeeCard } from "./CoffeCard";

@@ -18,7 +18,7 @@ import {
 } from "react-native-heroicons/solid";
 import { theme } from "@/global/theme";
 import { Home, Product } from "@/views";
-import {RootStackParamList} from '@/global/routes'
+import { RootStackParamList } from "@/global/routes";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
@@ -38,10 +38,10 @@ export default function App() {
           options={{ headerShown: false }}
           component={HomeTabs}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Product"
           options={{ headerShown: false }}
-          component={Product }
+          component={Product}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -15,7 +15,7 @@ module.exports = function (api) {
             "@/global": "./global",
             "@/atomic/element": "./atomic/element",
             "@/atomic/component": "./atomic/component",
-            "@/atomic/design": "./atomic/design"
+            "@/atomic/design": "./atomic/design",
           },
         },
       ],
@@ -23,10 +23,10 @@ module.exports = function (api) {
       [
         "module:react-native-dotenv",
         {
-          'moduleName': '@env',
-          'path': '.env',
-        }
-      ]
+          moduleName: "@env",
+          path: ".env",
+        },
+      ],
     ],
   };
 };
