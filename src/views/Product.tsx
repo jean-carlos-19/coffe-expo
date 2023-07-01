@@ -7,6 +7,8 @@ import Constans from "expo-constants";
 import { useNavigation } from "@react-navigation/native";
 import { HeartIcon } from "react-native-heroicons/solid";
 import { theme } from "@/global/theme";
+import { Shadow } from 'react-native-shadow-2';
+
 
 const { statusBarHeight } = Constans;
 
@@ -43,17 +45,14 @@ const Product = (props: any) => {
 
         <View
           className="flex-row justify-center"
-          style={{
-            shadowColor: theme.bgDark,
-            shadowRadius: 30,
-            shadowOffset: { width: 0, height: 30 },
-            shadowOpacity: 0.9
-          }}
         >
-          <Image
-            source={image}
-            className="h-60 w-60"
-          />
+          <Shadow startColor={theme.bgDarkRGBA}  offset={[0,30]}>
+            <Image
+              style={{borderRadius:240}}
+              source={image}
+              className="h-60 w-60 rounded-full"
+            />
+          </Shadow>
         </View>
 
         <View
@@ -172,20 +171,20 @@ const Product = (props: any) => {
         {/* bu  y now button */}
         <View
           className="flex-row justify-between mx-4"
-        >  
-            <TouchableOpacity className="p-4 rounded-full border border-gray-400">
-              <ShoppingBagIcon size={30} color={"gray"} />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                backgroundColor:theme.bgLight
-              }}
-              className="p-4 rounded-full flex-1 ml-3"
-            >
-              <Text className="text-center text-base font-semibold text-white">
-                Buy Now
-              </Text>
-            </TouchableOpacity>
+        >
+          <TouchableOpacity className="p-4 rounded-full border border-gray-400">
+            <ShoppingBagIcon size={30} color={"gray"} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: theme.bgLight
+            }}
+            className="p-4 rounded-full flex-1 ml-3"
+          >
+            <Text className="text-center text-base font-semibold text-white">
+              Buy Now
+            </Text>
+          </TouchableOpacity>
 
         </View>
       </View>
