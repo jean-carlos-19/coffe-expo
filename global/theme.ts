@@ -5,5 +5,6 @@ const theme = {
   bgLight: "#d4a574",
   bgDark: "#8c5319",
   text: "#3C2A21",
+  bgDarkRGBA: "rgba(140,83,25,0.25)",
 };
 export { theme };
