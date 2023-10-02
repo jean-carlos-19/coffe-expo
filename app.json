@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "coffee-expo",
-    "slug": "coffee-expo",
+    "name": "expo-coffee",
+    "slug": "expo-coffee",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

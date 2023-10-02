@@ -44,10 +44,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ gh repo clone https://github.com/jean-carlos-19/coffe-expo
+$ gh repo clone https://github.com/jean-carlos-19/expo-coffee
 
 # Access to the mobile folder
-$ cd coffe-expo
+$ cd expo-coffee
 
 # Install dependencies
 $ yarn install
