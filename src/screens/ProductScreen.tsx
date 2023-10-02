@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import {
- ArrowLeftCircleIcon,
- MinusIcon,
- PlusIcon,
- ShoppingBagIcon,
- StarIcon,
-} from 'react-native-heroicons/outline';
-import { View, Image, TouchableOpacity, Text, StatusBar } from 'react-native';
+import { StarIcon } from 'react-native-heroicons/outline';
+import { View, Image, Text, StatusBar } from 'react-native';
+import { IMAGES, typesButtonConst, typesIcon } from '@/constants';
 import { useNavigation } from '@react-navigation/native';
-import { HeartIcon } from 'react-native-heroicons/solid';
+import { CustomButton } from '@/atomic/elements';
 import { Shadow } from 'react-native-shadow-2';
 import { theme } from '@/atomic/theme';
-import { IMAGES, typesButtonConst, typesIcon } from '@/constants';
-import { CustomButton } from '@/atomic/elements';
+
+const contentProduct = Object.freeze({
+ details: {
+  volumen: 'Volumen',
+  about: 'About',
+  size: 'Coffee size',
+ },
+ button: {
+  buy: 'buy now',
+ },
+});
 
 const ProductScreen = (props: any) => {
  const { item } = props.route.params;
@@ -21,13 +25,9 @@ const ProductScreen = (props: any) => {
  const [size, set_size] = useState('small');
  return (
   <>
-   <StatusBar />
+   <StatusBar backgroundColor={theme.bgDark} />
    <View className="w-full h-full flex-col justify-between items-stretch">
-    <Image
-     className="w-full h-2/6 absolute "
-     source={IMAGES.BEANS_2.IMG.SRC}
-     alt={IMAGES.BEANS_1.IMG.ALT}
-    />
+    <Image className="w-full h-2/6 absolute " source={IMAGES.BEANS_2.IMG.SRC} alt={IMAGES.BEANS_1.IMG.ALT} />
 
     <View className="space-y-4">
      <View className="mx-4 flex-row justify-between items-center">
@@ -56,11 +56,7 @@ const ProductScreen = (props: any) => {
 
      <View className="flex-row justify-center">
       <Shadow startColor={theme.bgDarkRGBA} offset={[0, 30]}>
-       <Image
-        style={{ borderRadius: 240 }}
-        source={image}
-        className="h-60 w-60 rounded-full"
-       />
+       <Image style={{ borderRadius: 240 }} source={image} className="h-60 w-60 rounded-full" />
       </Shadow>
      </View>
 
@@ -88,46 +84,36 @@ const ProductScreen = (props: any) => {
        }}
        className="text-lg font-bold"
       >
-       Coffee size
+       {contentProduct.details.size}
       </Text>
+
       <View className="flex-row justify-between">
-       <TouchableOpacity
-        onPress={() => set_size('small')}
-        className="p-3 px-8 rounded-full"
-        style={{
-         backgroundColor: size === 'small' ? theme.bgLight : 'rgba(0,0,0,0.07)',
-        }}
-       >
-        <Text className={size === 'small' ? 'text-white' : 'text-gray-700'}>
-         Small
-        </Text>
-       </TouchableOpacity>
+       <CustomButton
+        type={typesButtonConst.default}
+        bacground={size === 'small' ? theme.bgLight : 'rgba(0,0,0,0.07)'}
+        stylyButton="p-3 px-8 rounded-full"
+        stylyText={size === 'small' ? 'text-white' : 'text-gray-700'}
+        text="Smal"
+        handlerPress={() => set_size('small')}
+       />
 
-       <TouchableOpacity
-        onPress={() => set_size('medium')}
-        className="p-3 px-8 rounded-full"
-        style={{
-         backgroundColor:
-          size === 'medium' ? theme.bgLight : 'rgba(0,0,0,0.07)',
-        }}
-       >
-        <Text className={size === 'medium' ? 'text-white' : 'text-gray-700'}>
-         Medium
-        </Text>
-       </TouchableOpacity>
+       <CustomButton
+        type={typesButtonConst.default}
+        bacground={size === 'medium' ? theme.bgLight : 'rgba(0,0,0,0.07)'}
+        stylyButton="p-3 px-8 rounded-full"
+        stylyText={size === 'medium' ? 'text-white' : 'text-gray-700'}
+        text="Smal"
+        handlerPress={() => set_size('medium')}
+       />
 
-       <TouchableOpacity
-        onPress={() => set_size('larger')}
-        className="p-3 px-8 rounded-full"
-        style={{
-         backgroundColor:
-          size === 'larger' ? theme.bgLight : 'rgba(0,0,0,0.07)',
-        }}
-       >
-        <Text className={size === 'larger' ? 'text-white' : 'text-gray-700'}>
-         Larger
-        </Text>
-       </TouchableOpacity>
+       <CustomButton
+        type={typesButtonConst.default}
+        bacground={size === 'larger' ? theme.bgLight : 'rgba(0,0,0,0.07)'}
+        stylyButton="p-3 px-8 rounded-full"
+        stylyText={size === 'larger' ? 'text-white' : 'text-gray-700'}
+        text="Smal"
+        handlerPress={() => set_size('larger')}
+       />
       </View>
      </View>
 
@@ -138,47 +124,63 @@ const ProductScreen = (props: any) => {
        }}
        className="text-lg font-bold"
       >
-       About
+       {contentProduct.details.about}
       </Text>
       <Text className="text-gray-700">{desc}</Text>
      </View>
 
      <View className="flex-row justify-between items-center mx-4 mb-2">
       <View className="flex-row items-center space-x-1">
-       <Text className="text-base text-gray-700 font-semibold opacity-60">
-        Volume
-       </Text>
+       <Text className="text-base text-gray-700 font-semibold opacity-60">{contentProduct.details.volumen}</Text>
        <Text className="text-base text-gray-700 font-semibold">{volume}</Text>
       </View>
 
       <View className="flex-row items-center space-x-4 border-gray-500 border rounded-full p-1 px-4">
-       <TouchableOpacity>
-        <MinusIcon size={20} strokeWidth={3} color={theme.text} />
-       </TouchableOpacity>
+       <CustomButton
+        type={typesButtonConst.icon}
+        icon={{
+         color: theme.text,
+         size: 20,
+         strokeWidth: 3,
+         type: typesIcon.MinusIcon,
+        }}
+       />
+       <View></View>
        <Text style={{ color: theme.text }} className="font-extrabold text-lg">
-        2
+        {2}
        </Text>
-       <TouchableOpacity>
-        <PlusIcon size={20} strokeWidth={3} color={theme.text} />
-       </TouchableOpacity>
+       <View></View>
+       <CustomButton
+        type={typesButtonConst.icon}
+        icon={{
+         color: theme.text,
+         size: 20,
+         strokeWidth: 3,
+         type: typesIcon.PlusIcon,
+        }}
+       />
       </View>
      </View>
 
      {/* buy now button */}
      <View className="flex-row justify-between mx-4">
-      <TouchableOpacity className="p-4 rounded-full border border-gray-400">
-       <ShoppingBagIcon size={30} color={'gray'} />
-      </TouchableOpacity>
-      <TouchableOpacity
-       style={{
-        backgroundColor: theme.bgLight,
+      <CustomButton
+       type={typesButtonConst.icon}
+       stylyButton={`p-4 rounded-full border border-gray-400`}
+       icon={{
+        color: 'gray',
+        size: 30,
+        strokeWidth: 1,
+        type: typesIcon.ShoppingBagIcon,
        }}
-       className="p-4 rounded-full flex-1 ml-3"
-      >
-       <Text className="text-center text-base font-semibold text-white">
-        Buy Now
-       </Text>
-      </TouchableOpacity>
+      />
+      <CustomButton
+       type={typesButtonConst.default}
+       text={contentProduct.button.buy}
+       bacground={theme.bgLight}
+       stylyButton={`p-4 rounded-full flex-1 ml-3 bg-slate-100`}
+       stylyText="text-center text-base font-semibold text-white"
+      />
      </View>
     </View>
    </View>

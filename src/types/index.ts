@@ -64,6 +64,7 @@ interface CustomButtonProps {
  stylyButton?: string;
  stylyText?: string;
  text?: string;
+ bacground?: string;
  handlerPress?: () => void;
 }
 /* roots navigation */

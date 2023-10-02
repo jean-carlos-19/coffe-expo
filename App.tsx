@@ -16,12 +16,12 @@ import {
   HeartIcon as HeartSolid,
   ShoppingBagIcon as BagSolid,
 } from "react-native-heroicons/solid";
-import { theme } from "@/global/theme";
-import { Home, Product } from "@/views";
-import { RootStackParamList } from "@/global/routes";
+import { theme } from "@/atomic/theme";
+import { HomeScreen, ProductScreen } from "@/screens";
+import { RootButtonParamList, RootStackParamList } from "@/types";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<RootButtonParamList>();
 
 LogBox.ignoreLogs([""]);
 
@@ -34,14 +34,14 @@ export default function App() {
         }}
       >
         <Stack.Screen
-          name="Home"
+          name="HomeButtons"
           options={{ headerShown: false }}
           component={HomeTabs}
         />
         <Stack.Screen
           name="Product"
           options={{ headerShown: false }}
-          component={Product}
+          component={ProductScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
@@ -64,9 +64,9 @@ const HomeTabs = () => {
         },
       })}
     >
-      <Tab.Screen name="home" component={Home} />
-      <Tab.Screen name="favourite" component={Home} />
-      <Tab.Screen name="cart" component={Home} />
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Favourite" component={HomeScreen} />
+      <Tab.Screen name="Cart" component={HomeScreen} />
     </Tab.Navigator>
   );
 };
@@ -76,19 +76,19 @@ const menuIcons = (
 ) => {
   let icon;
 
-  if (route.name === "home")
+  if (route.name === "Home")
     icon = focused ? (
       <HomeSolid size={30} color={theme.bgLight} />
     ) : (
       <HomeOutline size={30} color={"white"} />
     );
-  if (route.name === "favourite")
+  if (route.name === "Favourite")
     icon = focused ? (
       <HeartSolid size={30} color={theme.bgLight} />
     ) : (
       <HeartOutline size={30} color={"white"} />
     );
-  if (route.name === "cart")
+  if (route.name === "Cart")
     icon = focused ? (
       <BagSolid size={30} color={theme.bgLight} />
     ) : (

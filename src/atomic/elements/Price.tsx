@@ -12,10 +12,7 @@ const Price = (props: PriceProps) => {
  return (
   <View className="flex-row justify-between items-center">
    <Text className="text-white font-bold text-lg">$ {item.price}</Text>
-   <TouchableOpacity
-    onPress={() => navigation.navigate('Product', { item })}
-    className="p-4 bg-white rounded-full"
-   >
+   <TouchableOpacity onPress={() => navigation.navigate('Product', { item })} className="p-4 bg-white rounded-full">
     <PlusIcon size={25} strokeWidth={2} color={theme.bgDark} />
    </TouchableOpacity>
   </View>

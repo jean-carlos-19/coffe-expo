@@ -1,8 +1,8 @@
 import React from 'react';
+import { Grade, Price, Volumen } from '@/atomic/elements';
 import { View, Image, Text } from 'react-native';
-import { theme } from '@/atomic/theme';
 import { CoffeeCardProps } from '@/types';
-import { Grade, Price, Volumen } from '../elements';
+import { theme } from '@/atomic/theme';
 
 const CoffeeCard = (props: CoffeeCardProps) => {
  const { item } = props;

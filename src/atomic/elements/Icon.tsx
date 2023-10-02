@@ -6,22 +6,21 @@ import {
  PlusIcon,
  HeartIcon,
  ArrowLeftCircleIcon,
+ ShoppingBagIcon,
+ MinusIcon,
 } from 'react-native-heroicons/solid';
-import { typesIcon } from '@/constants';
 import { IconProps } from '@/types';
+import { typesIcon } from '@/constants';
 
 const Icon = (props: IconProps) => {
- const { type, size, color } = props;
-
- if (type === typesIcon.MapIcon) return <MapIcon size={size} color={color} />;
- if (type === typesIcon.ArrowLeftCircleIcon)
-  return <ArrowLeftCircleIcon size={size} color={color} />;
- if (type === typesIcon.MagnifyingGlassIcon)
-  return <MagnifyingGlassIcon size={size} color={color} />;
- if (type === typesIcon.StarIcon) return <StarIcon size={size} color={color} />;
- if (type === typesIcon.PlusIcon) return <PlusIcon size={size} color={color} />;
- if (type === typesIcon.HeartIcon)
-  return <HeartIcon size={size} color={color} />;
+ if (props.type === typesIcon.MapIcon) return <MapIcon size={props.size} color={props.color} />;
+ if (props.type === typesIcon.ArrowLeftCircleIcon) return <ArrowLeftCircleIcon size={props.size} color={props.color} />;
+ if (props.type === typesIcon.MagnifyingGlassIcon) return <MagnifyingGlassIcon size={props.size} color={props.color} />;
+ if (props.type === typesIcon.StarIcon) return <StarIcon size={props.size} color={props.color} />;
+ if (props.type === typesIcon.PlusIcon) return <PlusIcon size={props.size} color={props.color} />;
+ if (props.type === typesIcon.HeartIcon) return <HeartIcon size={props.size} color={props.color} />;
+ if (props.type === typesIcon.ShoppingBagIcon) return <ShoppingBagIcon size={props.size} color={props.color} />;
+ if (props.type === typesIcon.MinusIcon) return <MinusIcon size={props.size} color={props.color} />;
 
  return null;
 };

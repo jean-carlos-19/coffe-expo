@@ -1,57 +1,55 @@
 import React from 'react';
-import { TouchableOpacity, Text, View } from 'react-native';
-import { CustomButtonProps } from '@/types';
 import { Icon } from './Icon';
+import { CustomButtonProps } from '@/types';
 import { typesButtonConst } from '@/constants';
+import { TouchableOpacity, Text, View } from 'react-native';
 
 const CustomButton = (props: CustomButtonProps) => {
- const { stylyButton, stylyText, isDisable, text, type, icon, handlerPress } =
-  props;
-
- if (type === typesButtonConst.default)
+ if (props.type === typesButtonConst.default)
   return (
    <TouchableOpacity
-    className={isDisable ? stylyButton : 'bg-gray-400 p-4 rounded-xl'}
-    onPress={handlerPress}
-    disabled={!isDisable}
+    className={props.isDisable ? 'p-4 bg-gray-400 rounded-xl' : props.stylyButton}
+    disabled={props.isDisable}
+    onPress={props.handlerPress}
+    style={{ backgroundColor: props.bacground }}
    >
-    <Text className={stylyText}>{text}</Text>
+    <Text className={props.stylyText}>{props.text}</Text>
    </TouchableOpacity>
   );
  if (
-  type === typesButtonConst.icon &&
-  icon?.size &&
-  icon.type &&
-  icon.color &&
-  icon.strokeWidth
+  props.type === typesButtonConst.icon &&
+  props.icon?.type &&
+  props.icon.size &&
+  props.icon.size &&
+  props.icon.strokeWidth
  )
   return (
-   <TouchableOpacity className={stylyButton} onPress={handlerPress}>
-    <Icon
-     type={icon.type}
-     color={icon.color}
-     size={icon.size}
-     strokeWidth={icon.strokeWidth}
-    />
+   <TouchableOpacity
+    className={props.stylyButton}
+    onPress={props.handlerPress}
+    disabled={props.isDisable}
+    style={{ backgroundColor: props.bacground }}
+   >
+    <Icon type={props.icon.type} color={props.icon.color} size={props.icon.size} strokeWidth={props.icon.strokeWidth} />
    </TouchableOpacity>
   );
  if (
-  type === typesButtonConst.iconText &&
-  icon?.size &&
-  icon.type &&
-  icon.color &&
-  icon.strokeWidth
+  props.type === typesButtonConst.iconText &&
+  props.icon?.type &&
+  props.icon.size &&
+  props.icon.size &&
+  props.icon.strokeWidth
  )
   return (
-   <TouchableOpacity className={stylyButton} onPress={handlerPress}>
-    <Text className={stylyText}>{text}</Text>
+   <TouchableOpacity
+    className={props.stylyButton}
+    onPress={props.handlerPress}
+    disabled={props.isDisable}
+    style={{ backgroundColor: props.bacground }}
+   >
+    <Text className={props.stylyText}>{props.text}</Text>
     <View></View>
-    <Icon
-     type={icon.type}
-     color={icon.color}
-     size={icon.size}
-     strokeWidth={icon.strokeWidth}
-    />
+    <Icon type={props.icon.type} color={props.icon.color} size={props.icon.size} strokeWidth={props.icon.strokeWidth} />
    </TouchableOpacity>
   );
  return null;

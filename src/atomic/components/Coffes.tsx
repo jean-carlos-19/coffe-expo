@@ -9,7 +9,7 @@ import { COFFE_ITEMS } from '@/constants';
 }
 const Coffes = () => {
  return (
-  <View className="p-2">
+  <View className="">
    {/* now we are goin to use a carousel here */}
    <Carousel
     vertical={false}

@@ -4,13 +4,17 @@ type statusIcon =
  | 'PlusIcon'
  | 'HeartIcon'
  | 'StarIcon'
- | 'ArrowLeftCircleIcon';
+ | 'ArrowLeftCircleIcon'
+ | 'ShoppingBagIcon'
+ | 'MinusIcon';
 const typesIcon = Object.freeze({
  MapIcon: 'MapIcon',
- MagnifyingGlassIcon: 'MagnifyingGlassIcon',
  PlusIcon: 'PlusIcon',
- HeartIcon: 'HeartIcon',
  StarIcon: 'StarIcon',
+ HeartIcon: 'HeartIcon',
+ ShoppingBagIcon: 'ShoppingBagIcon',
+ MagnifyingGlassIcon: 'MagnifyingGlassIcon',
  ArrowLeftCircleIcon: 'ArrowLeftCircleIcon',
+ MinusIcon: 'MinusIcon',
 });
 export { statusIcon, typesIcon };

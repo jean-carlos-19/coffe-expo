@@ -9,7 +9,7 @@ import { theme } from '@/atomic/theme';
 const Categories = () => {
  const [activeCategory, setActiveCategry] = useState(1);
  return (
-  <View className="px-2">
+  <View className="px-2 z-20">
    <FlatList
     horizontal
     showsHorizontalScrollIndicator={false}

@@ -7,7 +7,7 @@ const Header = () => {
  return (
   <>
    <Image
-    className="w-full h-[20%] absolute opacity-10 z-10"
+    className="h-[28%] absolute opacity-10 z-10 bg-[theme.]"
     source={IMAGES.BEANS_1.IMG.SRC}
     alt={IMAGES.BEANS_1.IMG.ALT}
    />
